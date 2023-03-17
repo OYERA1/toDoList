@@ -1,4 +1,22 @@
 .wrapper {
-  margin: 0 auto;
+  max-width: 70em; /* Define a largura máxima da wrapper */
+  margin: 0 auto; /* Centraliza a wrapper horizontalmente */
+  align-items: center;
+  padding: 0 20px; /* Adiciona um espaçamento interno à wrapper */
 }
 
+/* Media queries para ajustar o estilo em diferentes tamanhos de tela */
+@media only screen and (max-width: 768px) {
+ 
+  .wrapper {
+    flex-wrap: wrap;
+    max-width: 100%; /* Define a largura máxima da wrapper como 100% */
+    padding: 0 10px; /* Reduz o espaçamento interno da wrapper */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    padding: 0 5px; /* Reduz ainda mais o espaçamento interno da wrapper */
+  }
+}

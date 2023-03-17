@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 import styles from "./App.module.css";
-import { Tasks } from "./components/face/Tasks";
+import { Invalid } from "./components/tasks/Invalid";
 import { Header } from "./components/header/Header";
 import { Input } from "./components/input/Input";
+import { Card } from "./components/cards/Card";
+import { TaskDescription } from "./components/TaskDesc/TaskDescription";
 import "./global.css";
 
 export function App() {
@@ -11,10 +13,12 @@ export function App() {
 
   return (
     <>
-        <Header />
+      <Header />
       <div className={styles.wrapper}>
-        <Input/>
-        <Tasks/>
+        <Input />
+        <TaskDescription/>
+        {/* <Invalid/> */}
+        <Card />
       </div>
     </>
   );
