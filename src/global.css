@@ -26,8 +26,4 @@
 body {
   background: var(--gray-600);
   -webkit-font-smoothing: antialiased;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  
 }

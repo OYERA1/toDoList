@@ -3,14 +3,18 @@ import trash from "../../assets/trash.svg";
 import styles from "./Card.module.css";
 
 interface CommentProps {
+  id: number;
   content: string;
-  onDeleteTask: (task: string) => void;
 }
-export function Card({ content, onDeleteTask }: CommentProps) {
+export function Card({ content }: CommentProps) {
   const [isChecked, setIsChecked] = useState(false);
 
   function handleCheckboxChange() {
     setIsChecked(!isChecked);
+  }
+
+  function handleCreateNewComment() {
+    console.log('oi')
   }
 
   const divStyle = isChecked ? { border: "1px solid var(--gray-500)" } : {};
@@ -28,11 +32,8 @@ export function Card({ content, onDeleteTask }: CommentProps) {
         />
       </div>
       <div className={styles.text}>
-        <p
-          style={textStyle}
-          className={styles.cardText}
-        >
-          {content}aaaaaaaaaaaaaaaaaaaaaaaaaa
+        <p style={textStyle} className={styles.cardText}>
+          {content}
         </p>
       </div>
       <div className={styles.butDiv}>

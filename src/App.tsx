@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import styles from "./App.module.css";
-import { Invalid } from "./components/tasks/Invalid";
+import { Invalid } from "./components/invalid/Invalid";
 import { Header } from "./components/header/Header";
 import { Input } from "./components/input/Input";
 import { Card } from "./components/cards/Card";
@@ -16,9 +16,7 @@ export function App() {
       <Header />
       <div className={styles.wrapper}>
         <Input />
-        <TaskDescription/>
-        {/* <Invalid/> */}
-        <Card />
+        <TaskDescription />
       </div>
     </>
   );
