@@ -1,38 +1,21 @@
-import plus from "../../assets/plus.svg";
 import styles from "./Input.module.css";
-import { FormEvent, useState } from "react";
-import { Card } from "../cards/Card";
+import plus from "../../assets/plus.svg";
+import { FormEvent } from "react";
 
-export function Input(props) {
-  const [task, setTask] = useState([] as string[]);
-  const [newTask, setNewTask] = useState("");
-
-
-  function handleNewCommentChange(event: FormEvent<HTMLInputElement>) {
-    event.target.setCustomValidity("");
-    setNewTask(event.target.value);
-  }
-
-  function handleCreateNewTask(event) {
-    event.preventDefault()
-  }
-
+export function Input({ addNewTask }: FormEvent) {
   return (
-    <>
-      <form onSubmit={handleCreateNewTask} className={styles.inputDiv}>
-        <input
-          className={styles.inputText}
-          onChange={handleNewCommentChange}
-          type="text"
-          name="inputText"
-          placeholder="Adicione uma nova tarefa"
-          value={newTask}
-        />
-        <button type="submit" className={styles.button}>
-          Criar
-          <img src={plus} alt="" />
-        </button>
-      </form>
-    </>
+    <form className={styles.inputDiv} onSubmit={addNewTask}>
+      <input
+        className={styles.inputText}
+        // onChange={handleUpdateTask}
+        type="text"
+        name="inputText"
+        placeholder="Adicione uma nova tarefa"
+      />
+      <button type="submit" className={styles.button}>
+        Criar
+        <img src={plus} alt="" />
+      </button>
+    </form>
   );
 }

@@ -1,4 +1,49 @@
-.inputDiv {
+.parentDiv {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 91px;
+  flex-direction: column;
+  width: 736px;
+}
+
+.textDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.textBlue {
+  
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--blue);
+  gap: 8px;
+}
+
+.textPurple {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--purple);
+  gap: 8px;
+}
+
+.cascade {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/*------------Input--------------*/
+
+/* .inputDiv {
   margin: 0 auto;
   display: flex;
   gap: 0.5rem;
@@ -19,12 +64,6 @@
   border-radius: 0.5rem;
   padding: 1rem;
   width: 39.875rem;
-  color: var(--gray-100);
-  outline: none;
-}
-
-.inputText:focus {
-  outline: 1px solid var(--purple);
 }
 
 .inputText:placeholder {
@@ -49,13 +88,4 @@
   border: none;
   border-radius: 0.5rem;
   gap: 8px;
-  cursor: pointer;
-}
-
-.button:hover {
-  transform: scale(1.06);
-}
-
-.button:active {
-  transform: scale(1.02);
-}
+} */
