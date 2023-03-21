@@ -22,10 +22,34 @@ export function App() {
       },
     ]);
   }
+
+  function handleRemoveTask(taskId: string) {
+    const newTask = task.filter((task) => task.id !== taskId);
+
+    setTask(newTask);
+  }
+
+  function handleCompleteTask(taskId: string) {
+    const newTasks = task.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isCompleted: !task.isCompleted,
+        };
+      }
+      return task;
+    });
+    setTask(newTasks);
+  }
+
   return (
     <>
       <Header onAddTask={handleAddTask} />
-      <Tasks tasks={task} />
+      <Tasks
+        onDelete={handleRemoveTask}
+        onComplete={handleCompleteTask}
+        tasks={task}
+      />
     </>
   );
 }

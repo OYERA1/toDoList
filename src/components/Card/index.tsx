@@ -5,18 +5,24 @@ import { ITask } from "../../App";
 
 interface Props {
   task: ITask;
+  onDelete: (taskId: string) => void;
+  onComplete: (taskId: string) => void;
 }
 
-export function Card({ task }: Props) {
+export function Card({ task, onDelete, onComplete }: Props) {
   return (
     <div className={styles.cardDiv}>
       <div>
-        <input type="checkbox" />
+        <input type="checkbox" onClick={() => onComplete(task.id)} />
       </div>
 
-      <p>{task.content}</p>
+      {task.isCompleted ? (
+        <p className={styles.line}>{task.content}</p>
+      ) : (
+        <p>{task.content}</p>
+      )}
 
-      <button>
+      <button onClick={() => onDelete(task.id)}>
         <HiOutlineTrash size={24} />
       </button>
     </div>
