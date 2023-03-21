@@ -1,0 +1,49 @@
+.cardDiv {
+  width: 100%;
+  max-width: 100%;
+  background: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  line-break: break-all;
+  word-break: break-all;
+
+  input {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--blue);
+    border-radius: 60%;
+  }
+
+  input:checked {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--purple);
+    background: var(--purple);
+    background-image: url("../../assets/Vector.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.18rem;
+    color: var(--gray-100);
+    margin-right: auto;
+  }
+
+  button {
+    background: none;
+    border: none;
+
+    svg {
+      color: var(--gray-300);
+    }
+  }
+}

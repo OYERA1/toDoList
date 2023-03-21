@@ -1,17 +1,31 @@
+import { Header } from "./components/Header";
+import { Tasks } from "./components/Tasks";
 import { useState } from "react";
+import "./styles/global.scss";
 
-import styles from "./App.module.css";
-import { Header } from "./components/header/Header";
-import { Task } from "./components/Task/Task";
-import "./global.css";
+export interface ITask {
+  id: string;
+  content: string;
+  isCompleted: boolean;
+}
 
 export function App() {
+  const [task, setTask] = useState<ITask[]>([]);
+
+  function handleAddTask(setContent: string) {
+    setTask([
+      ...task,
+      {
+        id: crypto.randomUUID(),
+        content: setContent,
+        isCompleted: false,
+      },
+    ]);
+  }
   return (
     <>
-      <Header />
-      <div className={styles.wrapper}>
-        <Task />
-      </div>
+      <Header onAddTask={handleAddTask} />
+      <Tasks tasks={task} />
     </>
   );
 }
